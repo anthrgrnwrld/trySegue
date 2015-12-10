@@ -1,25 +1,86 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TrySegue" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1WF-JZ-Fdh">
+                                <rect key="frame" x="132" y="319" width="110" height="30"/>
+                                <animations/>
+                                <state key="normal" title="To Second View"/>
+                                <connections>
+                                    <segue destination="yMn-EN-Esy" kind="presentation" id="fbH-mE-dPr"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1WF-JZ-Fdh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0nw-yP-bzK"/>
+                            <constraint firstItem="1WF-JZ-Fdh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ijB-or-4ms"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="zZh-N7-hfZ">
+            <objects>
+                <viewController id="yMn-EN-Esy" customClass="SecondViewController" customModule="TrySegue" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="esw-Ai-5pG"/>
+                        <viewControllerLayoutGuide type="bottom" id="cNq-au-uoo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b1n-od-PLw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-uC-6c0">
+                                <rect key="frame" x="138" y="323" width="100" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHN-Il-brP">
+                                <rect key="frame" x="20" y="40" width="30" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Exit"/>
+                                <connections>
+                                    <segue destination="tVi-Ky-p90" kind="unwind" unwindAction="returnFirstView:" id="aH2-fm-w4F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.97647058819999999" green="0.73725490199999999" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wHN-Il-brP" firstAttribute="top" secondItem="esw-Ai-5pG" secondAttribute="bottom" constant="20" id="79c-Oj-SO7"/>
+                            <constraint firstItem="ZYw-uC-6c0" firstAttribute="centerY" secondItem="b1n-od-PLw" secondAttribute="centerY" id="bW6-JY-6b1"/>
+                            <constraint firstItem="ZYw-uC-6c0" firstAttribute="centerX" secondItem="b1n-od-PLw" secondAttribute="centerX" id="nre-5R-FxZ"/>
+                            <constraint firstItem="wHN-Il-brP" firstAttribute="leading" secondItem="b1n-od-PLw" secondAttribute="leading" constant="20" id="zz1-QS-Jo8"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZU-qn-YnF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="tVi-Ky-p90" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="773.5" y="298.5"/>
         </scene>
     </scenes>
 </document>
